@@ -8,5 +8,8 @@
     <title>Login</title>
 </head>
 <body>
+{{--Recebendo de UserController--}}
+{{$user->name}}
+
 </body>
 </html>
