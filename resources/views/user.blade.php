@@ -3,8 +3,11 @@
 @section('title', 'User Title')
 
 @section('content')
+    <div>
 {{--Recebendo 'user' de UserController, como a variavel $user --}}
-{{$user}}
+{{$user->name}}
+{{$user->email}}
+    </div>
 @endsection
 
 @push('scripts')
