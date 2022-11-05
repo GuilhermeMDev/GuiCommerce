@@ -7,5 +7,7 @@
 {{$user}}
 @endsection
 
-
+@push('scripts')
+<script src="{{ asset('js/user.js') }}"></script>  {{--Posso exportar esse js e substituir o o pré-definido em layout --}}
+@endpush
 
