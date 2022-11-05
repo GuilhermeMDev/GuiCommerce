@@ -1,15 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-<body>
-{{--Recebendo de UserController--}}
-{{$user->name}}
+@extends('layouts.default') {{--Aqui importo o conteudo para o layout--}}
 
-</body>
-</html>
+@section('title', 'User Title')
+
+@section('content')
+{{--Recebendo 'user' de UserController, como a variavel $user --}}
+{{$user}}
+@endsection
+
+
+
