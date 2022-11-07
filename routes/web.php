@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::get('/login', function () {
 
 Route::get('/user/{user}', [UserController::class, 'showUser'])->name('user.show'); //este nome eu chamei dentro do body da blade por exemplo..
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
