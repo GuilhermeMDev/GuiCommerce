@@ -26,4 +26,5 @@ Route::get('/login', function () {
 Route::get('/user/{user}', [UserController::class, 'showUser'])->name('user.show'); //este nome eu chamei dentro do body da blade por exemplo..
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+Route::get('/project/{project}', [ProjectController::class, 'showProject'])->name('project.show');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
