@@ -11,18 +11,26 @@ class ProjectController extends Controller
 
     {
         $projects = Project::all();
-//        $projects = Project::find();//
-//        $projects = Project::delete();
+//        $projects = Project::find();
+//        $projects = Project::where();
 
         return view('projects', [
-            'projects' => $projects //lado esquerdo vai pra view em formato de variável
+            'projects' => $projects, //lado esquerdo vai pra view em formato de variável
         ]);
     }
 
-    public function showProject(Project $projects)
+    public function showProject(Project $project)
     {
         return view('project', [
-            'projects' => $projects
+            'project' => $project
+        ]);
+    }
+
+    public function newProject()
+    {
+        return $newIdea = Project::create([
+            'name' => 'Teste',
+            'description' => 'Testando banco de dados'
         ]);
     }
 }

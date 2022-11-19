@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('title', 'Projects List')
 
@@ -11,6 +11,7 @@
         @foreach($projects as $project)
             {{ $project-> name }} <br>
         @endforeach
+
     </div>
     <br>
     <form>

@@ -1,4 +1,4 @@
-@extends('layouts.default') {{--Aqui importo o conteudo para o layout--}}
+@extends('layouts.app') {{--Aqui importo o conteudo para o layout--}}
 
 @section('title', 'Users Title')
 
