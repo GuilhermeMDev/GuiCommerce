@@ -18,7 +18,13 @@ use App\Http\Controllers\ApiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'name' => 'Guilherme',
+        'nickname' => 'GuiGui'
+    ];
+
+    return view('first',
+    ['data' => $data]);
 });
 
 //Treinando Consumo API no Laravel
