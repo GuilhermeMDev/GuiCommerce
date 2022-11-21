@@ -18,7 +18,7 @@
 </head>
 <header class="text-gray-600">
     <div class="container mx-auto flex justify-between items-center p-5 items-center">
-        <a class="flex title-font font-medium items-center text-gray-900" href="{{ url('/') }} ">
+        <a class="flex font-medium items-center text-gray-700" href="{{ url('/') }} ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
                  stroke-linejoin="round" stroke-width="2"
                  class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Sair') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -76,66 +76,68 @@
 </header>
 <body>
 <div id="app">
-    {{--    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
-    {{--        <div class="container">--}}
-    {{--            <a class="navbar-brand">--}}
-    {{--                oi--}}
-    {{--            </a>--}}
-    {{--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--}}
-    {{--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--}}
-    {{--                    aria-expanded="false" >--}}
-    {{--                <span class="navbar-toggler-icon"></span>--}}
-    {{--            </button>--}}
+{{--    Configs antigas     --}}
+    {{--    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}{{--
+    --}}{{--        <div class="container">--}}{{--
+    --}}{{--            <a class="navbar-brand">--}}{{--
+    --}}{{--                oi--}}{{--
+    --}}{{--            </a>--}}{{--
+    --}}{{--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--}}{{--
+    --}}{{--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--}}{{--
+    --}}{{--                    aria-expanded="false" >--}}{{--
+    --}}{{--                <span class="navbar-toggler-icon"></span>--}}{{--
+    --}}{{--            </button>--}}{{--
 
-    {{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
+    --}}{{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}{{--
     <!-- Left Side Of Navbar -->
-    {{--                <ul class="navbar-nav me-auto">--}}
+    --}}{{--                <ul class="navbar-nav me-auto">--}}{{--
 
-    {{--                </ul>--}}
+    --}}{{--                </ul>--}}{{--
 
     <!-- Right Side Of Navbar -->
-    {{--                <ul class="navbar-nav ms-auto">--}}
-    {{--                    <!-- Authentication Links -->--}}
-    {{--                    @guest--}}
-    {{--                        @if (Route::has('login'))--}}
-    {{--                            <li class="nav-item">--}}
-    {{--                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-    {{--                            </li>--}}
-    {{--                        @endif--}}
+    --}}{{--                <ul class="navbar-nav ms-auto">--}}{{--
+    --}}{{--                    <!-- Authentication Links -->--}}{{--
+    --}}{{--                    @guest--}}{{--
+    --}}{{--                        @if (Route::has('login'))--}}{{--
+    --}}{{--                            <li class="nav-item">--}}{{--
+    --}}{{--                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}{{--
+    --}}{{--                            </li>--}}{{--
+    --}}{{--                        @endif--}}{{--
 
-    {{--                        @if (Route::has('register'))--}}
-    {{--                            <li class="nav-item">--}}
-    {{--                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-    {{--                            </li>--}}
-    {{--                        @endif--}}
-    {{--                    @else--}}
-    {{--                        <li class="nav-item dropdown">--}}
-    {{--                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"--}}
-    {{--                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
-    {{--                                {{ Auth::user()->name }}--}}
-    {{--                            </a>--}}
+    --}}{{--                        @if (Route::has('register'))--}}{{--
+    --}}{{--                            <li class="nav-item">--}}{{--
+    --}}{{--                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}{{--
+    --}}{{--                            </li>--}}{{--
+    --}}{{--                        @endif--}}{{--
+    --}}{{--                    @else--}}{{--
+    --}}{{--                        <li class="nav-item dropdown">--}}{{--
+    --}}{{--                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"--}}{{--
+    --}}{{--                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}{{--
+    --}}{{--                                {{ Auth::user()->name }}--}}{{--
+    --}}{{--                            </a>--}}{{--
 
-    {{--                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}
-    {{--                                <a class="dropdown-item" href="{{ route('logout') }}"--}}
-    {{--                                   onclick="event.preventDefault();--}}
-    {{--                                                     document.getElementById('logout-form').submit();">--}}
-    {{--                                    {{ __('Logout') }}--}}
-    {{--                                </a>--}}
+    --}}{{--                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}{{--
+    --}}{{--                                <a class="dropdown-item" href="{{ route('logout') }}"--}}{{--
+    --}}{{--                                   onclick="event.preventDefault();--}}{{--
+    --}}{{--                                                     document.getElementById('logout-form').submit();">--}}{{--
+    --}}{{--                                    {{ __('Logout') }}--}}{{--
+    --}}{{--                                </a>--}}{{--
 
-    {{--                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-    {{--                                    @csrf--}}
-    {{--                                </form>--}}
-    {{--                            </div>--}}
-    {{--                        </li>--}}
-    {{--                    @endguest--}}
-    {{--                </ul>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </nav>--}}
-
+    --}}{{--                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}{{--
+    --}}{{--                                    @csrf--}}{{--
+    --}}{{--                                </form>--}}{{--
+    --}}{{--                            </div>--}}{{--
+    --}}{{--                        </li>--}}{{--
+    --}}{{--                    @endguest--}}{{--
+    --}}{{--                </ul>--}}{{--
+    --}}{{--            </div>--}}{{--
+    --}}{{--        </div>--}}{{--
+    --}}{{--    </nav>--}}{{--
+--}}
     <main class="">
         @yield('content')
     </main>
 </div>
+
 </body>
 </html>
