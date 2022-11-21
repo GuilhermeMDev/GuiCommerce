@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\ApiController;
@@ -24,12 +25,11 @@ Route::get('/', function () {
     return view('first');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Auth::routes(); //ex
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/product', [ProductController::class, 'show'])->name('product.show');
+Route::get('/admin/product', [ProductController::class, 'edit'])->name('product.edit');
 
 //Treinando Consumo API no Laravel
 Route::get('/api', [ApiController::class,'index'])->name('api.index');
