@@ -60,7 +60,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         {{ __('Sair') }}
@@ -76,7 +76,7 @@
 </header>
 <body>
 <div id="app">
-{{--    Configs antigas     --}}
+    {{--    Configs antigas     --}}
     {{--    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}{{--
     --}}{{--        <div class="container">--}}{{--
     --}}{{--            <a class="navbar-brand">--}}{{--
@@ -134,7 +134,7 @@
     --}}{{--        </div>--}}{{--
     --}}{{--    </nav>--}}{{--
 --}}
-    <main class="">
+    <main class="mx-auto">
         @yield('content')
     </main>
 </div>

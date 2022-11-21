@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -23,15 +24,13 @@ Route::get('/', function () {
     return view('first');
 });
 
-//Treinando Consumo API no Laravel
-Route::get('/api', [ApiController::class,'index'])->name('api.index');
-
 Route::get('/login', function () {
     return view('login');
 });
 
-
-
-Auth::routes(); //ex
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/product', [ProductController::class, 'show'])->name('product.show');
+
+//Treinando Consumo API no Laravel
+Route::get('/api', [ApiController::class,'index'])->name('api.index');
+
