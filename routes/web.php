@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
@@ -20,15 +21,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-
-    return view('first');
-});
+Route::get('/', [FirstController::class, 'index'])->name('index.first');
 
 Auth::routes(); //ex
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/product', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/admin/product', [ProductController::class, 'edit'])->name('product.edit');
 
 //Treinando Consumo API no Laravel
