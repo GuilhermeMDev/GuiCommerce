@@ -53,7 +53,19 @@
                 </nav>
             @endif
         @else
-            <a class="nav-item dropdown">
+            <a
+                class="nav-link md:ml-96 flex items-center bg-gray-100 border-0 py-1 px-3
+                 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0
+                 " href="{{ url('/home') }}"
+                 >
+                Painel
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                     stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+{{--            <a class="nav-item dropdown ">--}}
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
@@ -70,7 +82,7 @@
                         @csrf
                     </form>
                 </div>
-            </a>
+{{--            </a>--}}
         @endguest
     </div>
 </header>
