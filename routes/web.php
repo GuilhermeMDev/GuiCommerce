@@ -20,14 +20,15 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [FirstController::class, 'index'])->name('index.first');
-
 Auth::routes(); //ex
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//public user
+Route::get('/', [FirstController::class, 'index'])->name('index.first');
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
-Route::get('/admin/product', [ProductController::class, 'edit'])->name('product.edit');
+
+//admin
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home/product', [HomeController::class, 'edit'])->name('product.edit');
 
 //Treinando Consumo API no Laravel
 Route::get('/api', [ApiController::class,'index'])->name('api.index');

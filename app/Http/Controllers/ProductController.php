@@ -14,8 +14,4 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit()
-    {
-        return view('product_edit');
-    }
 }
