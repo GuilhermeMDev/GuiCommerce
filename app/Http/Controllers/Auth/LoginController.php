@@ -42,7 +42,7 @@ class LoginController extends Controller
     {
         //get input value
         $loginValue = request('username');
-        //check if its an email or just a text
+        //check if it's an email or just a text
         $this->username = filter_var($loginValue, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         //merge values
         request()->merge([$this->username => $loginValue]);

@@ -26,7 +26,7 @@ Route::get('/', [FirstController::class, 'index'])->name('index.first');
 Auth::routes(); //ex
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/admin/product', [ProductController::class, 'edit'])->name('product.edit');
 
 //Treinando Consumo API no Laravel

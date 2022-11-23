@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -16,8 +17,10 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->word; //macete*
         return [
-            'name' => $this->faker->name,
+            'name' => $name,
+            'slug' => Str::slug($name), //facilita as engenharias de busca do google por exemplo, com separador (por-exemplo-assim)
             'cover' => $this->faker->imageUrl,
             'price' => $this->faker->randomFloat(1,20,30),
             'description' => $this->faker->sentence,
