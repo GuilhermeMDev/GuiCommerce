@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite([ 'resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
+    @vite([  'resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <header class="text-gray-600">
     <div class="container mx-auto flex justify-between items-center p-5 items-center">
@@ -53,11 +53,18 @@
                 </nav>
             @endif
         @else
+            <a class="nav-link md:ml-96 flex flex-wrap items-center bg-gray-100 border-0 py-1 px-3
+                 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0"
+               href="{{ url('/home/product') }}"
+            >
+                Admin
+            </a>
+
             <a
                 class="nav-link md:ml-96 flex items-center bg-gray-100 border-0 py-1 px-3
                  focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0
                  " href="{{ url('/home') }}"
-                 >
+            >
                 Painel
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                      stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -65,24 +72,25 @@
                 </svg>
             </a>
 
-{{--            <a class="nav-item dropdown ">--}}
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
+            {{--            <a class="nav-item dropdown ">--}}
+            <a id="navbarDropdown" class="nav-link dropdown-toggle md:ml-96 items-center bg-gray-100 border-0 py-1 px-3
+                 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0" href="#" role="button"
+               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Sair') }}
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                       <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Sair') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-{{--            </a>--}}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+            {{--            </a>--}}
         @endguest
     </div>
 </header>
