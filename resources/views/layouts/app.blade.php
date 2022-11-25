@@ -18,7 +18,7 @@
 </head>
 <header class="text-gray-600">
     <div class="container mx-auto flex justify-between items-center p-5 items-center">
-        <a class="flex font-medium items-center text-gray-700" href="{{ url('/') }} ">
+        <a class="flex font-medium items-center text-gray-700 no-underline "  href="{{ url('/') }} ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
                  stroke-linejoin="round" stroke-width="2"
                  class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@
             </a>
 
             <a
-                class="nav-link md:ml-96 flex items-center bg-gray-100 border-0 py-1 px-3
+                class="nav-link md:ml-96 items-center bg-gray-100 border-0 py-1 px-3
                  focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0
                  " href="{{ url('/home') }}"
             >

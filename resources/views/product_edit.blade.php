@@ -5,7 +5,7 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="lg:w-2/4 w-full mx-auto overflow-auto">
                 <div class="flex items-center justify-between mb-2">
-                    <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Adicionar Produto</h1>
+                    <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Editar Produto</h1>
                 </div>
 
                 <form>
@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="p-2 w-full">
-                            <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Adicionar</button>
+                            <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Atualizar</button>
                         </div>
 
                     </div>

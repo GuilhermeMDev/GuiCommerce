@@ -28,7 +28,11 @@ Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name(
 
 //admin
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/home/product', [HomeController::class, 'edit'])->name('product.edit');
+Route::get('/home/create', [HomeController::class, 'create'])->name('product.create'); //exibir o formulario
+Route::post('/home/store', [HomeController::class, 'store'])->name('product.store'); //armazenar o produto no banco
+
+Route::get('/home/product/{products}', [HomeController::class, 'edit'])->name('product.edit');
+Route::put('/home/product/{products}', [HomeController::class, 'update'])->name('product.update');
 
 //Treinando Consumo API no Laravel
 Route::get('/api', [ApiController::class,'index'])->name('api.index');
