@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class HomeController extends Controller
@@ -102,4 +103,14 @@ class HomeController extends Controller
 
         return Redirect::route('home');
     }
+
+    public function destroyImage(Product $product) //deletando imagens
+    {
+        Storage::delete($product->cover);
+        $product->cover= null;
+        $product->save();
+
+        return Redirect::back();
+    }
+
 }

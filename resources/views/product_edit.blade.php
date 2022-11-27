@@ -17,7 +17,8 @@
                                 <label for="name" class="leading-7 text-sm text-gray-600">Nome do produto</label>
                                 <input
                                     value="{{ $product->name }}"
-                                    type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    type="text" id="name" name="name"
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                         </div>
 
@@ -27,7 +28,7 @@
                                 <input
                                     value="{{ $product->price }}"
                                     type="text" id="price" name="price"
-                                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                             </div>
                         </div>
 
@@ -37,7 +38,7 @@
                                 <input
                                     value="{{ $product->stock }}"
                                     type="text" id="stock" name="stock"
-                                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                         </div>
 
@@ -46,8 +47,27 @@
                                 <label for="name" class="leading-7 text-sm text-gray-600">Imagem de capa</label>
                                 <input
                                     type="file" id="cover" name="cover"
-                                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                             </div>
+                        </div>
+
+                        <div class="p-2 w-full">
+                            @if($product->cover)
+                                <img src="{{ url("storage/{$product->cover}") }}" alt="Product {{$product->name}}"
+                                     class="object-cover object-center w-20 h-20 block"
+                                >
+                            @else
+                                <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"
+                                     class="object-cover object-center w-20 h-20 block"
+                                >
+                            @endif
+                            <button
+                                href="{{ route('product.destroyImage', $product->id) }}"
+                               class="flex w-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded no-underline"
+                            >
+                                Deletar Img
+                            </button>
+
                         </div>
 
                         <div class="p-2 w-full">
@@ -60,7 +80,10 @@
                         </div>
 
                         <div class="p-2 w-full">
-                            <button type="submit" class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Atualizar</button>
+                            <button type="submit"
+                                    class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                                Atualizar
+                            </button>
                         </div>
 
                     </div>

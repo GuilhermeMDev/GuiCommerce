@@ -34,6 +34,7 @@ Route::get('/home/product/{product}/edit', [HomeController::class, 'edit'])->nam
 Route::put('/home/product/{product}', [HomeController::class, 'update'])->name('product.update');//edita o produto no banco
 
 Route::get('/home/product/{product}/delete', [HomeController::class, 'destroy'])->name('product.destroy');//deletando
+Route::get('/home/product/{product}/delete-image', [HomeController::class, 'destroyImage'])->name('product.destroyImage');//deletando imagem
 
 //Treinando Consumo API no Laravel
 Route::get('/api', [ApiController::class,'index'])->name('api.index');
