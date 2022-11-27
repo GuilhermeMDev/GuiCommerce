@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +30,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/create', [HomeController::class, 'create'])->name('product.create'); //exibir o formulario
 Route::post('/home/store', [HomeController::class, 'store'])->name('product.store'); //armazenar o produto no banco
 
-Route::get('/home/product/{products}', [HomeController::class, 'edit'])->name('product.edit');
-Route::put('/home/product/{products}', [HomeController::class, 'update'])->name('product.update');
+Route::get('/home/product/{product}/edit', [HomeController::class, 'edit'])->name('product.edit');//exibir o formulario
+Route::put('/home/product/{product}', [HomeController::class, 'update'])->name('product.update');//edita o produto no banco
+
+Route::get('/home/product/{product}/delete', [HomeController::class, 'destroy'])->name('product.destroy');//deletando
 
 //Treinando Consumo API no Laravel
 Route::get('/api', [ApiController::class,'index'])->name('api.index');

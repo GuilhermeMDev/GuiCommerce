@@ -31,15 +31,41 @@ class HomeController extends Controller
     }
 
     //Abre a pagina de editar produto
-    public function edit()
+    public function edit(Product $product)
     {
-        return view('product_edit');
+//        dd($product);
+        return view('product_edit', [
+
+            'product' => $product
+        ]);
     }
 
     //Recebe requisicao para update (PUT)
-    public function update()
+    public function update(Product $product, Request $request)
     {
+        $input = $request->validate([
+            'name' => 'string|required',
+            'price' => 'string|required',
+            'stock' => 'integer|nullable',
+            'cover' => 'image|nullable',
+            'description' => 'string|nullable',
+        ]);
+        //tratamento de imagens para salvar no banco e localmente *storage/app/public/products
+        if (!empty($input['cover']) && $input['cover']->isValid()) {
+
+            $input['cover'] = $input['cover']->store('products');
+//            $file = $input['cover'];
+//            $path = $file->store('products');
+//            $input['cover'] = $path;
+        }
+        $product->fill($input);
+        $product->save();
+
+        return Redirect::route('home');
+
+
     }
+
     //Abre a página de criar produto
     public function create()
     {
@@ -53,19 +79,26 @@ class HomeController extends Controller
             'name' => 'string|required',
             'price' => 'string|required',
             'stock' => 'integer|nullable',
-            'cover' => 'file|nullable',
+            'cover' => 'image|nullable',
             'description' => 'string|nullable',
         ]);
         $input['slug'] = Str::slug($input['name']); //Criando um novo item no array a cima
 
         //tratamento de imagens para salvar no banco e localmente *storage/app/public/products
-        if(!empty($input['cover']) && $input['cover']->isValid()){
+        if (!empty($input['cover']) && $input['cover']->isValid()) {
             $file = $input['cover'];
-            $path = $file->store('public/products'); //Para alterar essa variavel de ambiente la no .env, assim passo a digitar somente 'products por exemplo.
+            $path = $file->store('products'); //Para alterar essa variavel de ambiente la no .env, assim passo a digitar somente 'products por exemplo.
             $input['cover'] = $path; //substituindo
 
         }
         Product::create($input);
+
+        return Redirect::route('home');
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
 
         return Redirect::route('home');
     }

@@ -51,15 +51,22 @@
                     <tr @if($loop->even) class="bg-gray-100" @endif> {{-- Aqui acessei uma propriedade interna do foreach pra inserir a linha cinza nos pares por exemplo --}}
                         <td class="px-4 py-3">{{$product->id}}</td>
                         <td class="px-4 py-3">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="{{$product->cover}}">
+                            @if($product->cover)
+                            <img src="{{ url("storage/{$product->cover}") }}"  alt="Product {{$product->name}}"
+                                 class="object-cover object-center w-20 h-20 block"
+                                 >
+                            @else
+                                <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"
+                                     class="object-cover object-center w-full h-full block"
+                                >
+                            @endif
                         </td>
                         <td class="px-4 py-3">{{$product->name}}</td>
                         <td class="px-4 py-3">R$ {{$product->price}}</td>
                         <td class="px-4 py-3">{{$product->stock}}</td>
                         <td class="px-4 py-3 text-sm text-right space-x-3 text-gray-900">
                             <a href="{{ route('product.edit', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Editar</a>
-                            <a class="mt-3 text-indigo-500 inline-flex items-center">Deletar</a>
+                            <a href="{{ route('product.destroy', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Deletar</a>
                         </td>
                     </tr>
                 @endforeach

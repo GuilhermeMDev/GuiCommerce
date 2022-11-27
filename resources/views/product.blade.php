@@ -4,7 +4,15 @@
     <section class="text-gray-600 overflow-hidden">
         <div class="container px-5 py-24 mx-auto">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{$product->cover}}">
+                @if($product->cover)
+                    <img src="{{ url("storage/{$product->cover}") }}" alt="{{$product->name}}"
+                         class="object-cover object-center w-20 h-20 block"
+                    >
+                @else
+                    <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"
+                         class="object-cover object-center w-full h-full block"
+                    >
+                @endif
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{$product->name}}</h1>
                     <p class="leading-relaxed">{{$product->description}}</p>
