@@ -6,7 +6,7 @@
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
                 @if($product->cover)
                     <img src="{{ url("storage/{$product->cover}") }}" alt="{{$product->name}}"
-                         class="object-cover object-center w-20 h-20 block"
+                         class="object-cover object-center w-fit h-fit block"
                     >
                 @else
                     <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"

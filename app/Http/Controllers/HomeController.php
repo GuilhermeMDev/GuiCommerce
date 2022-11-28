@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductStoreRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 
 class HomeController extends Controller
 {
@@ -42,15 +44,10 @@ class HomeController extends Controller
     }
 
     //Recebe requisicao para update (PUT)
-    public function update(Product $product, Request $request)
+    public function update(Product $product, ProductStoreRequest $request)
     {
-        $input = $request->validate([
-            'name' => 'string|required',
-            'price' => 'string|required',
-            'stock' => 'integer|nullable',
-            'cover' => 'image|nullable',
-            'description' => 'string|nullable',
-        ]);
+        $input = $request->validated();//validando la no ProductStoreRequest
+
         //tratamento de imagens para salvar no banco e localmente *storage/app/public/products
         if (!empty($input['cover']) && $input['cover']->isValid()) {
 
@@ -74,21 +71,15 @@ class HomeController extends Controller
     }
 
     //Recebe a requisiçao de criar (POST)
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        $input = $request->validate([
-            'name' => 'string|required',
-            'price' => 'string|required',
-            'stock' => 'integer|nullable',
-            'cover' => 'image|nullable',
-            'description' => 'string|nullable',
-        ]);
+        $input = $request->validated();
         $input['slug'] = Str::slug($input['name']); //Criando um novo item no array a cima
 
         //tratamento de imagens para salvar no banco e localmente *storage/app/public/products
         if (!empty($input['cover']) && $input['cover']->isValid()) {
             $file = $input['cover'];
-            $path = $file->store('products'); //Para alterar essa variavel de ambiente la no .env, assim passo a digitar somente 'products por exemplo.
+            $path = $file->store('products');
             $input['cover'] = $path; //substituindo
 
         }
@@ -99,13 +90,18 @@ class HomeController extends Controller
 
     public function destroy(Product $product)
     {
+        Storage::exists($product->cover);
+        Storage::delete($product->cover);
+        $product->cover= null;
+
         $product->delete();
 
         return Redirect::route('home');
     }
 
-    public function destroyImage(Product $product) //deletando imagens
+    public function destroyImage(Product $product) //deletando a imagem de um produto
     {
+        Storage::exists($product->cover);
         Storage::delete($product->cover);
         $product->cover= null;
         $product->save();
