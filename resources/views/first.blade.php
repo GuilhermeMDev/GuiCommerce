@@ -29,7 +29,7 @@
                                      class="object-cover object-center w-full h-full block"
                                 >
                             @else
-                                <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"
+                                <img src="{{ url("images/image-default.jpg") }}" alt="{{$product->name}}"
                                      class="object-cover object-center w-full h-full block"
                                 >
                             @endif

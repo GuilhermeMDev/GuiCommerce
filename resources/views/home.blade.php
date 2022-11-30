@@ -56,7 +56,7 @@
                                  class="object-cover object-center w-20 h-20 block"
                                  >
                             @else
-                                <img src="{{ url("images/product-default-text.jpg") }}" alt="{{$product->name}}"
+                                <img src="{{ url("images/image-dafault.jpg") }}" alt="{{$product->name}}"
                                      class="object-cover object-center w-full h-full block"
                                 >
                             @endif
