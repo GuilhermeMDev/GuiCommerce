@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center red">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Example Component</div>
@@ -38,8 +38,8 @@ export default {
             type: Object,
             default() {
                 return {
-                    name: '',
-                    nickname: ''
+                    name: 'teste',
+                    nickname: 'teste1'
                 }
             }
         },

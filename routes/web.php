@@ -25,6 +25,9 @@ Auth::routes(); //ex
 Route::get('/', [FirstController::class, 'index'])->name('index.first');
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 
+//teste vue
+Route::get('/teste', [FirstController::class, 'teste'])->name('teste');
+
 //admin
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/create', [HomeController::class, 'create'])->name('product.create'); //exibir o formulario

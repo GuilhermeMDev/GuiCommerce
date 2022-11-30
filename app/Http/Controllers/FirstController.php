@@ -15,4 +15,9 @@ class FirstController extends Controller
             'products' => $products //aqui está o payload
         ]);
     }
+
+    public function teste()
+    {
+        return view('test');
+    }
 }

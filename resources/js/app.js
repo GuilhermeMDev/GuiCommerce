@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
+// import './bootstrap';
 import { createApp } from 'vue';
 
 /**
@@ -15,8 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import Welcome from './components/Welcome.vue';
+app.component('welcome', Welcome);
 
 /**
  * The following block of code may be used to automatically register your

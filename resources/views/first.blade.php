@@ -50,6 +50,10 @@
             </div>
         </div>
     </section>
+{{--    <div id="app">--}}
+{{--        <example-component></example-component>--}}
+{{--    </div>--}}
+
     <footer class="text-gray-600">
         <div class="border-t border-gray-200">
             <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
