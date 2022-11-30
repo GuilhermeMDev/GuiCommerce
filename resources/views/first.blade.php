@@ -50,9 +50,6 @@
             </div>
         </div>
     </section>
-{{--    <div id="app">--}}
-{{--        <example-component></example-component>--}}
-{{--    </div>--}}
 
     <footer class="text-gray-600">
         <div class="border-t border-gray-200">
