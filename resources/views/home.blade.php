@@ -1,26 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <!--    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-{{ session('status') }}
-        </div>
-
-    @endif
-
-    {{ __('You are logged in!') }}
-    </div>
-</div>
-</div>
-</div>-->
-
-    <div class="container px-50 py-24 mx-auto">
+     <div class="container px-50 py-24 mx-auto">
         <div class="lg:w-2/3 w-full mx-auto overflow-auto">
             <div class="flex items-center justify-between mb-2">
                 <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Produtos</h1>
@@ -66,6 +47,7 @@
                         <td class="px-4 py-3">{{$product->stock}}</td>
                         <td class="px-4 py-3 text-sm text-right space-x-3 text-gray-900">
                             <a href="{{ route('product.edit', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Editar</a>
+
                             <a href="{{ route('product.destroy', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Deletar</a>
                         </td>
                     </tr>

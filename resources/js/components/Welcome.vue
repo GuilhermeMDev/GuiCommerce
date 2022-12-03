@@ -1,5 +1,6 @@
 <template>
-    <h1>Welcome Page aqui</h1>
+    <h1>Welcome Component Here</h1>
+
 </template>
 
 <script>

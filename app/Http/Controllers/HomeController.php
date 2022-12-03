@@ -90,9 +90,9 @@ class HomeController extends Controller
 
     public function destroy(Product $product)
     {
-        Storage::exists($product->cover);
-        Storage::delete($product->cover);
-        $product->cover= null;
+        if($product->cover){
+            Storage::delete($product->cover);
+        }
 
         $product->delete();
 
@@ -103,7 +103,7 @@ class HomeController extends Controller
     {
         Storage::exists($product->cover);
         Storage::delete($product->cover);
-        $product->cover= null;
+        $product->cover = null;
         $product->save();
 
         return Redirect::back();
