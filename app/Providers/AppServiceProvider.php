@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
         Gate::before(fn(User $user, $ability) => $user->hasPermissionTo($ability)); //closure arrow function
     }
 }

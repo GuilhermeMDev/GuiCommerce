@@ -17,7 +17,8 @@ Route::middleware('auth')->group(function () {
 
 
 //my project
-Route::get('/', [FirstController::class, 'index'])->name('index.first');
+Route::get('/', [FirstController::class, 'index'])->name('index.index');
+Route::get('/products-list', [FirstController::class, 'productsList'])->name('products.list');
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 
 //teste vue
