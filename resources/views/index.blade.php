@@ -2,61 +2,79 @@
 
 @section('content')
 
-<section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-        <div class="flex flex-wrap w-full bg-gray-100 py-62 px-15 relative mb-4">
-            <img alt="gallery" src="{{ 'images/banner.png' }}" class="w-full object-cover h-full object-center block relative inset-0" >
-        </div>
-        <div class="text-center relative z-10 w-full pb-5">
-            <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Relógios Unisex</h2>
-            <p class="leading-relaxed relative pb-5">Aproveite nossas promoções</p>
-        </div>
-        <div class="lg:w-2/3 mx-auto">
-            <div class="flex flex-wrap -mx-2">
-                <div class="px-2 w-1/2">
-                    <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" class="w-full object-cover h-full object-center block relative inset-0" src="{{ asset('images/toster.png') }}">
-                        <div class="text-center relative z-10 w-full">
-                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Quer dar um plus em sua cozinha?</h2>
-                            <p class="leading-relaxed">TORRADEIRA ELÉTRICA TOSTADEIRA GuiLux - 127v</p>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <div class="flex flex-wrap w-full bg-gray-100 py-62 px-15 relative mb-4">
+                <a href="{{ route('products.list') }}">
 
+                    <img alt="gallery" src="{{ 'images/banner.png' }}"
+                         class="w-full object-cover h-full object-center block relative inset-0">
+                </a>
+
+            </div>
+            <div class="text-center relative z-10 w-full pb-5">
+                <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Relógios Unisex</h2>
+                <p class="leading-relaxed relative pb-5">Aproveite nossas promoções</p>
+            </div>
+            <div class="lg:w-2/3 mx-auto">
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/2">
+                        <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+
+                            <a href="{{ route('products.list') }}">
+                                <img alt="gallery"
+                                     class="w-full object-cover h-full object-center block relative inset-0"
+                                     src="{{ asset('images/toster.png') }}">
+                            </a>
+
+                            <div class="text-center relative z-10 w-full">
+                                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Quer dar um plus em
+                                    sua cozinha?</h2>
+                                <p class="leading-relaxed">TORRADEIRA ELÉTRICA TOSTADEIRA GuiLux - 127v</p>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="px-2 w-1/2">
-                    <div class="flex flex-wrap w-full full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" class="w-full object-cover h-full object-center block relative inset-0" src="{{ asset('images/trimmer.png') }}">
-                        <div class="text-center relative z-10 w-full">
-                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Sua barba como nunca..</h2>
-                            <p class="leading-relaxed">Máquina De Cortar Cabelo Profissional</p>
+                    <div class="px-2 w-1/2">
+                        <div class="flex flex-wrap w-full full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+                            <a href="{{ route('products.list') }}">
 
+                                <img alt="gallery"
+                                     class="w-full object-cover h-full object-center block relative inset-0"
+                                     src="{{ asset('images/trimmer.png') }}">
+                                </a>
+                                    <div class="text-center relative z-10 w-full">
+                                        <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Sua barba como
+                                            nunca..</h2>
+                                        <p class="leading-relaxed">Máquina De Cortar Cabelo Profissional</p>
+
+                                    </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="text-gray-600">
-    <div class="border-t border-gray-200">
-        <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
-            <div class="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
-                <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
-                    <label for="footer-field" class="leading-7 text-sm text-gray-600">Busque seus Produtos</label>
-                    <input type="text" id="footer-field" name="footer-field"
-                           class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    <footer class="text-gray-600">
+        <div class="border-t border-gray-200">
+            <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+                <div class="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+                    <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
+                        <label for="footer-field" class="leading-7 text-sm text-gray-600">Busque seus Produtos</label>
+                        <input type="text" id="footer-field" name="footer-field"
+                               class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <button
+                        class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                        Button
+                    </button>
+                    <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Bitters chicharrones
+                        fanny pack
+                        <br class="lg:block hidden">waistcoat green juice
+                    </p>
                 </div>
-                <button
-                    class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                    Button
-                </button>
-                <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Bitters chicharrones
-                    fanny pack
-                    <br class="lg:block hidden">waistcoat green juice
-                </p>
-            </div>
-            <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+                <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
         <a class="text-gray-500">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                viewBox="0 0 24 24">
@@ -87,18 +105,18 @@
           </svg>
         </a>
       </span>
+            </div>
         </div>
-    </div>
-    <div class="bg-gray-100">
-        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p class="text-gray-500 text-sm text-center sm:text-left">© 2022 Guilherme Dev —
-                <a href="https://github.com/GuilhermeMDev" class="text-gray-600 ml-1" target="_blank"
-                   rel="noopener noreferrer"> @GitHub</a>
-            </p>
-            <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">
+        <div class="bg-gray-100">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">© 2022 Guilherme Dev —
+                    <a href="https://github.com/GuilhermeMDev" class="text-gray-600 ml-1" target="_blank"
+                       rel="noopener noreferrer"> @GitHub</a>
+                </p>
+                <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">
                    I’m slowly becoming the person I should have been a long time ago.
                </span>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 @endsection
