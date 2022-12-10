@@ -31,7 +31,6 @@ class ProductController extends Controller
     public function productsSearch(Product $product, Request $request)
     {
         $productFiltered = $product->where('name', 'LIKE', "%{$request->search}%")->get();
-//        dd($productFiltered);
 
         return view('products.search-products.index', [
             'products' => $productFiltered
