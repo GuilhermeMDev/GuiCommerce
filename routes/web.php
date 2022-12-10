@@ -17,12 +17,13 @@ Route::middleware('auth')->group(function () {
 
 
 //my project
-Route::get('/', [FirstController::class, 'index'])->name('index.index');
-Route::get('/products-list', [FirstController::class, 'productsList'])->name('products.list');
-Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/', [ProductController::class, 'index'])->name('index.index');
+Route::get('/products', [ProductController::class, 'productsList'])->name('products.list');
+Route::get('/products-search', [ProductController::class, 'productsSearch'])->name('products.search'); //quando o usuário busca por um produto especifico
+Route::get('/product/{product:slug?}', [ProductController::class, 'show'])->name('product.show'); //Abre a pagino do produto selecionado
 
 //teste vue
-Route::get('/teste', [FirstController::class, 'teste'])->name('teste');
+Route::get('/teste', [ProductController::class, 'teste'])->name('teste');
 
 //only admin access painel
 Route::middleware('permission:edit-products')->group(function () {
