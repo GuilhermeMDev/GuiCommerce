@@ -11,9 +11,8 @@
                     class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                     Button
                 </button>
-                <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Bitters chicharrones
-                    fanny pack
-                    <br class="lg:block hidden">waistcoat green juice
+                <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Agradecimento especial ao Will Correa
+                    <br class="lg:block hidden">E a toda a família DeviTools!
                 </p>
             </form>
             <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">

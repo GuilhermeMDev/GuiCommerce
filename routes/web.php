@@ -5,6 +5,7 @@ use App\Http\Controllers\FirstController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +21,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [ProductController::class, 'index'])->name('index.index');
 Route::get('/products', [ProductController::class, 'productsList'])->name('products.list');
 Route::get('/products-search', [ProductController::class, 'productsSearch'])->name('products.search'); //quando o usuário busca por um produto especifico
-Route::get('/product/{product:slug?}', [ProductController::class, 'show'])->name('product.show'); //Abre a pagino do produto selecionado
+Route::get('/product/{product:slug?}', [ProductController::class, 'show'])->name('product.show'); //Abre a pagina do produto selecionado
+Route::get('/about', [UserController::class, 'about'])->name('user.about');
 
 //teste vue
 Route::get('/teste', [ProductController::class, 'teste'])->name('teste');

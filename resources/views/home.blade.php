@@ -27,7 +27,7 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody class="divide-y">
+                <body class="divide-y">
                 @foreach($products as $product)
                     <tr @if($loop->even) class="bg-gray-100" @endif> {{-- Aqui acessei uma propriedade interna do foreach pra inserir a linha cinza nos pares por exemplo --}}
                         <td class="px-4 py-3">{{$product->id}}</td>
@@ -48,11 +48,11 @@
                         <td class="px-4 py-3 text-sm text-right space-x-3 text-gray-900">
                             <a href="{{ route('product.edit', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Editar</a>
 
-                            <a href="{{ route('product.destroy', $product->id) }}" class="mt-3 text-indigo-500 inline-flex items-center">Deletar</a>
+                            <a href="{{ route('product.destroy', $product->id) }}" class="mt-3 text-red-400 inline-flex items-center">Deletar</a>
                         </td>
                     </tr>
                 @endforeach
-                </tbody>
+                </body>
             </table>
         </div>
     </div>
