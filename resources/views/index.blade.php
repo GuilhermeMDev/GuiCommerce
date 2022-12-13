@@ -14,7 +14,7 @@
             </div>
             <div class="text-center relative z-10 w-full pb-5">
                 <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Relógios Unisex</h2>
-                <p class="leading-relaxed relative pb-5">Aproveite nossas promoções</p>
+                <p class="leading-relaxed relative pb-5">Aproveite nossas promoções!</p>
             </div>
             <div class="lg:w-2/3 mx-auto">
                 <div class="flex flex-wrap -mx-2">
