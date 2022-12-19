@@ -5,7 +5,7 @@
             <iframe title="map" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0"
                     scrolling="no"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14964.857220265654!2d-40.30011970949127!3d-20.33276361135064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1671487173825!5m2!1spt-BR!2sbr"
-                    style="filter: grayscale(1) contrast(1.2) opacity(0.16);">
+                    style="filter: grayscale(0.01) contrast(1.2) opacity(0.70);">
             </iframe>
         </div>
         <div class="container px-5 py-24 mx-auto flex">
