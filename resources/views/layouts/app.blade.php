@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite([  'resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -22,6 +22,7 @@
             <a href="{{ route('index.index') }}" class="mr-5 hover:text-gray-900">Início</a>
             <a href="{{ route('products.list') }}" class="mr-5 hover:text-gray-900">Produtos</a>
             <a href="{{ route('user.about') }}" class="mr-5 hover:text-gray-900">Sobre</a>
+            <a href="{{ route('user.contactUs') }}" class="mr-5 hover:text-gray-900">Fala conosco</a>
         </nav>
         <a href="{{ url('/') }}"
            class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
@@ -79,15 +80,22 @@
                     </nav>
                 @endif
             @else
-                <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+                <nav class="flex lg:w-3/5 flex-wrap items-center text-base md:ml-auto">
                     @can('edit-products')
-                        <a href="{{ url('/home') }}" class="mr-5 hover:text-gray-900">Admin</a>
+                        <a href="{{ route('home') }}" class="mr-5 hover:text-gray-900">Painel Admin</a>
                     @else
-                        <a href="{{ url('/profile') }}" class="mr-5 hover:text-gray-900">Profile</a>
+                        <select onchange="window.location.href=this.options[this.selectedIndex].value;">
+                            <option value="" disabled selected>Opções</option>
+                            <option value="{{ route('profile.edit') }}">Perfil</option>
+                            <option value="{{ route('user.shopCart') }}">Carrinho</option>
+                            <option value="{{ route('user.contactUs') }}">Fale Conosco</option>
+{{--                            <option value="{{ route('') }}">HR</option>--}}
+                        </select>
+{{--                        <a href="{{ url('/profile') }}" class="mr-5 hover:text-gray-900">Profile</a>--}}
                     @endif
                 </nav>
                 <div class="relative">
-                    <span class="mr-3"> Olá {{ Auth::user()->name }},</span>
+                    <a class="mr-3" href="{{ route('profile.edit') }}"> Olá {{ Auth::user()->name }},</a>
                     <button class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
