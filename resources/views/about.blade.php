@@ -15,7 +15,7 @@
                     como JavaScript, Tailwind e PHP, e o banco de dados MySql.<br>
                     O projeto GuiCommerce é uma iniciativa pessoal de
                     aprimorar minhas habilidades, aprender mais sobre as linguagens e tecnologias aplicadas.</p>
-                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
+                <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-8 mb-6"></span>
                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">GUILHERME MAGIONI</h2>
                 <p class="text-gray-500 pb-5 ">Junior Web Development</p>
             </div>

@@ -24,7 +24,7 @@
                             <p class="mt-1">R$ {{ $product->price }}</p>
                         </div>
                         <a href="{{ route('product.show', $product->slug) }}"
-                           class="mt-3 text-indigo-500 inline-flex items-center">Ver mais
+                           class="mt-3 text-blue-500 inline-flex items-center">Ver mais
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                  stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>

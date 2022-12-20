@@ -10,6 +10,9 @@ class UserController extends Controller
     {
         return view ('about');
     }
+    public function contactUs(){
+        return view('contact_us');
+    }
 
 
 }

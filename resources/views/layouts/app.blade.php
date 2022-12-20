@@ -22,7 +22,7 @@
             <a href="{{ route('index.index') }}" class="mr-5 hover:text-gray-900">Início</a>
             <a href="{{ route('products.list') }}" class="mr-5 hover:text-gray-900">Produtos</a>
             <a href="{{ route('user.about') }}" class="mr-5 hover:text-gray-900">Sobre</a>
-            <a href="{{ route('user.contactUs') }}" class="mr-5 hover:text-gray-900">Fala conosco</a>
+            <a href="{{ route('user.contactUs') }}" class="mr-5 hover:text-gray-900">Fale conosco</a>
         </nav>
         <a href="{{ url('/') }}"
            class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
@@ -80,30 +80,30 @@
                     </nav>
                 @endif
             @else
-                <nav class="flex lg:w-3/5 flex-wrap items-center text-base md:ml-auto">
-                    @can('edit-products')
-                        <a href="{{ route('home') }}" class="mr-5 hover:text-gray-900">Painel Admin</a>
-                    @else
-                        <select onchange="window.location.href=this.options[this.selectedIndex].value;">
-                            <option value="" disabled selected>Opções</option>
-                            <option value="{{ route('profile.edit') }}">Perfil</option>
-                            <option value="{{ route('user.shopCart') }}">Carrinho</option>
-                            <option value="{{ route('user.contactUs') }}">Fale Conosco</option>
-{{--                            <option value="{{ route('') }}">HR</option>--}}
-                        </select>
-{{--                        <a href="{{ url('/profile') }}" class="mr-5 hover:text-gray-900">Profile</a>--}}
-                    @endif
-                </nav>
-                <div class="relative">
-                    <a class="mr-3" href="{{ route('profile.edit') }}"> Olá {{ Auth::user()->name }},</a>
-                    <button class="dropdown-item" href="{{ route('logout') }}"
+                @can('edit-products')
+                <button class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-2 border-0 rounded items-center text-base mx-auto">
+                        <a href="{{ route('home') }}">Painel Admin</a>
+                </button>
+                @endif
+
+                <div class="flex flex-wrap items-center">
+                    <a class="block mr-3"> Olá {{ Auth::user()->name }},</a>
+                    <select onchange="window.location.href=this.options[this.selectedIndex].value;" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected disabled>Opções</option>
+                        <option value="{{ route('profile.edit') }}">Perfil</option>
+                        <option value="{{ route('user.shopCart') }}">Carrinho</option>
+                        <option value="{{ route('user.contactUs') }}">Suporte</option>
+                        <option value="{{ route('logout') }}">Sair</option>
+                    </select>
+                                    {{--Exemplo de logout em js--}}
+<!--                    <button class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         {{ __('Sair') }}
                     </button>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
-                    </form>
+                    </form>-->
                 </div>
             @endguest
         </div>
