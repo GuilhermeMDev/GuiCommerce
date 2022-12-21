@@ -15,8 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import About from './components/AboutComponent.vue';
-app.component('AboutComponent', About);
+import Counter from './components/CounterComponent.vue';
+app.component('CounterComponent', Counter);
 
 /**
  * The following block of code may be used to automatically register your

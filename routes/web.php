@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -14,15 +15,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //ShopCart
+    Route::get('/cart', [CartController::class, 'shopCart'])->name('user.shopCart'); //acessando
+    Route::post('/cart', [CartController::class, 'addShopCart'])->name('user.addShopCart'); //enviando item para o carrinho
+    Route::post('/cart-edit', [CartController::class, 'editShopCart'])->name('user.editShopCart'); //enviando item para o carrinho
+    Route::post('/cart-delete', [CartController::class, 'delShopCart'])->name('user.delShopCart'); //deletando item do carrinho
 });
 
 
-//my project
+//eCommerce
 Route::get('/', [ProductController::class, 'index'])->name('index.index');
 Route::get('/products', [ProductController::class, 'productsList'])->name('products.list');
 Route::get('/products-search', [ProductController::class, 'productsSearch'])->name('products.search'); //quando o usuário busca por um produto especifico
 Route::get('/product/{product:slug?}', [ProductController::class, 'show'])->name('product.show'); //Abre a pagina do produto selecionado
 Route::get('/about', [UserController::class, 'about'])->name('user.about');
+Route::get('/contact-us', [UserController::class, 'contactUs'])->name('user.contactUs');
 
 //teste vue
 Route::get('/teste', [ProductController::class, 'teste'])->name('teste');

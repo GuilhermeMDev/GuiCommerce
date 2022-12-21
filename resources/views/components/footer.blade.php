@@ -8,7 +8,6 @@
                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
                 <button
-{{--                    class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-1 rounded items-center text-base mx-auto"--}}
                     class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">
                     Buscar
                 </button>
