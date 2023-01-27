@@ -16,12 +16,17 @@ jobs:
       - run: git config --global user.email "ci@devi.tools"
       - run: git config --global user.name "CI"
 
+      # code base modifcations
+      - name: Copy docker-compose
+        run: cp .environment/guicommerce.devi.tools/docker-compose.yml docker-compose.yml
+
       # go to artifacts project, create a new git repository and add all files
       - name: Configure repo
         run: |
           rm -rf .git
           git init
           git add .
+          git add -f docker-compose.yml
           git commit --quiet -m "[deploy] $(date)"
 
       # configure ssh
