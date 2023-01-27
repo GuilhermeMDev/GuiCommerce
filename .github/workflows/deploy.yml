@@ -38,7 +38,6 @@ jobs:
       # setup and execute deploy
       - name: Run push to sever
         run: |
-          cd artifacts
           echo "Add host 165.22.182.175"
           echo -e "165.22.182.175" > ~/.ssh/known_hosts
           echo "chmod on ~/.ssh/known_hosts"
