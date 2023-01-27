@@ -6,7 +6,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        node-version: [12.x] # Only run the 12.x build
+        node-version: [16.x] # Only run the 16.x build
 
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
